@@ -1,0 +1,13 @@
+docker.io/bitnami/fluentd:1.14.6-debian-10-r1
+snyk/broker:4.129.0-github-com
+snyk/dc_bundle:ea3d3b8
+snyk/code_api:574efcb
+docker.io/emissaryingress/emissary:2.0.5
+snyk/code_api:574efcb
+snyk/service-health-aggregator:ffd7c686f9ef669704d9eb99a61d92953bd851a8
+snyk/dc_suggest:ea3d3b8_147a176
+alpine:3.16
+docker.io/bitnami/fluentd:1.14.6-debian-10-r1
+docker.io/bitnami/redis:6.2.6-debian-10-r179
+docker.io/bitnami/redis:6.2.6-debian-10-r179
+snyk/logrotate:1.0.0-alpine3.16.1
