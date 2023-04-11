@@ -1,0 +1,14 @@
+alpine:3.16.4
+bitnami/kubectl:1.26.2-debian-11-r2
+docker.io/bitnami/fluentd:1.15.3-debian-11-r36
+docker.io/bitnami/nginx-ingress-controller:1.6.4-debian-11-r5
+docker.io/bitnami/nginx:1.22.1-debian-11-r44
+docker.io/bitnami/redis:7.0.8-debian-11-r13
+docker.io/emissaryingress/emissary:2.0.5
+docker.io/snyk/broker:4.143.3-github-com
+docker.io/snyk/code_api:9be3a5a
+docker.io/snyk/dc_bundle:da287dd
+docker.io/snyk/dc_suggest:da287dd_445f1b4
+docker.io/snyk/deeproxy:e63ddb5b76cc316d895580f341f63d2acb81f8e1
+docker.io/snyk/logrotate:4cfeca19c95fc77ccc0c77079f0bb7e9570757c2
+docker.io/snyk/service-health-aggregator:1f5be0bd4bd7199501d1c14adaa247d59debfd44
