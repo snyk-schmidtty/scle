@@ -1,0 +1,109 @@
+global:
+  ### REQUIRED: Image pull secrets ###
+  imagePullSecret:
+    credentials:
+      # Contact your Snyk representative to get credentials
+      username: ""
+      password: ""
+
+  ### Optional: Local engine URL ###
+  # A URL that points to the cluster ingress. Required for CLI/PR Checks.
+  # Ex: http://local-engine.domain
+  localEngineUrl: ""
+
+  ### OPTIONAL: Configure if using an outbound proxy. ###
+  proxy:
+    enabled: false # Set to true to enable proxy support.
+    url: "" # Proxy URL, including schema: http[s]://username:password@proxy:port
+    tlsRejectUnauthorized: false # Set to true if ignoring any certificate presented by the proxy.
+    useCustomCert: false # Set to true to load the certificate specified below.
+    cert: | # Multiline string containing any/all certificates required for proxy trust, in PEM format.
+      ""
+
+  ## The built-in Ingress to Snyk Code Local Engine uses NGINX.
+  ingress:
+    ### OPTIONAL: Setup ingress to enable CLI/PR Checks
+    enabled: false
+    # Leaving this empty will allow any host pointing to ingress to work
+    host: ""
+    ### OPTIONAL: TLS.
+    tls:
+      # Set to true to enable TLS for the ingress
+      enabled: false
+      # If TLS is enabled, define your secret here
+      # If a secret is already created for the host, set the name here
+      # If a secret should be created for you, set key and cert as well
+      secret:
+        # Set the name of the secret that should be used
+        # Leave blank to have one generated based on the service name
+        name: "{{ .Release.Name }}-ingress-tls"
+        key: |
+          # Should start with -----BEGIN PRIVATE KEY-----
+
+        cert: |
+          # Should start with -----BEGIN CERTIFICATE-----
+
+### REQUIRED: Broker settings ###
+broker-client:
+  # Broker Token is a value from Snyk. Get this from the integration settings page or your Snyk Representative
+  brokerToken: ""
+
+  ##### SCM Generic. Only fill in values that are required for your specific SCM #####
+  #   brokerType is used to define the Source Control that you are connecting to.
+  #   Allowed values for brokerType:
+  #   Github.com: github-com
+  #   Github Enterprise: github-enterprise
+  #   Bitbucket: bitbucket-server
+  #   Gitlab: gitlab
+  #   Azure Repos: azure-repos
+  brokerType: ""
+
+  ## Github Enterprise ##
+
+  # GHE URL - Ex: your.ghe.domain.com (do not prepend HTTPS) - For GHE Cloud use api.github.com
+  githubHost: ""
+
+  # GHE API Address - do not prepend HTTPS
+  githubApi: ""
+
+  # GHE Graph QL Address - do not prepend HTTPS
+  githubGraphQl: ""
+
+  ##### Github and Github Enterprise #####
+  githubToken: ""
+
+  ##### Bitbucket Server #####
+
+  # Bitbucket Username
+  bitbucketUsername: ""
+
+  # Bitbucket Password
+  bitbucketPassword: ""
+
+  # bitbucketHost URL - do not prepend HTTPS
+  bitbucketHost: ""
+
+  ##### GitLab #####
+
+  # Gitlab URL - do not prepend HTTPS
+  gitlabHost: ""
+
+  gitlabToken: ""
+
+  ##### Azure Repos #####
+  # Azure Repos Organization
+  azureReposOrg: ""
+
+  # Azure Repos Hostname - do not prepend HTTPS
+  azureReposHost: ""
+
+  # Azure Repos Token
+  azureReposToken: ""
+
+  ### Warning: enabling `codeSnippet` will send analysis results to Snyk servers
+  codeSnippet:
+    enabled: false
+
+  # PRIVATE CLOUD / REQUIRED: do not touch unless directed by a Snyk Representative
+  brokerServerUrl: ""
+  
